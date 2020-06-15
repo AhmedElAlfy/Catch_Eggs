@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Basic Meta -->
+        <meta charset="UTF-8" />
+        <!-- IE compatability -->
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,edge" />
+        <!-- Mobile Meta -->
+        <meta name="viewport" content="width=360, initial-scale=1" />
+        <!-- Author -->
+        <meta name="author" content="Ahmed El-Alfy" />
+        <!-- Title -->
+        <title>Eggs Catch</title>
+        <!-- Main CSS Style -->
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!-- Start game  -->
+        <div class="start-game">
+            <div class="intro">
+                <img src="imgs/hen_intro.png" alt="intro" />
+            </div>
+            <div class="start-btn">
+                Start Game
+            </div>
+            <div class="bestPlayer-btn">
+                Best Player
+            </div>
+            <div class="bestPlayer">
+                <span class="close">&times;</span>
+                <div class="stored-player">
+                    <h2>Best Player</h2>
+                    <span class="stored-name"></span>
+                    <span class="stored-score"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Play Again -->
+        <div class="play-again">
+            <div class="result">
+                <span class="your-result">Your Score : <span></span></span>
+            </div>
+            <div class="play-again-btn">
+                Play Again 
+            </div>
+        </div>
+        <!-- The Game -->
+        <div class="game">
+            <!-- game head -->
+            <div class="game-head">
+                <span class="score">Score : <span>0</span></span>
+                <span class="life">Life : <span>10</span></span>
+            </div>
+            <!-- game body -->
+            <div class="game-body">
+                <!-- Hens -->
+                <div class="hens">
+                    <img class="hen" src="imgs/hen.png" alt="hen" />
+                    <img class="hen" src="imgs/hen.png" alt="hen" />
+                    <img class="hen" src="imgs/hen.png" alt="hen" />
+                </div>
+                <!-- Eggs -->
+                <div class="eggs">
+                    <div class="nest">
+                    </div>
+                    <div class="nest">
+                    </div>
+                    <div class="nest">
+                    </div>
+                </div>
+                <!-- Broken Eggs -->
+                <div class="broken-eggs">
+                    <img class="broken-egg" src="imgs/broken_egg.png" alt="broken-eggs" />
+                    <img class="broken-egg" src="imgs/broken_egg.png" alt="broken-eggs" />
+                    <img class="broken-egg" src="imgs/broken_egg.png" alt="egbroken-eggs" />
+                </div>
+                <!-- Anger Hens -->
+                <div class="angery-hens">
+                    <img class="angery-hen" src="imgs/angry_hen.png" alt="angery-hen" />
+                    <img class="angery-hen" src="imgs/angry_hen.png" alt="angery-hen" />
+                </div>
+                <!-- Poos -->
+                <div class="poos">
+                    <div class="poo-nest">
+                         <img class="poo" src="imgs/poo.png" alt="poo" />
+                    </div>
+                    <div class="poo-nest">
+                         <img class="poo" src="imgs/poo.png" alt="poo" />
+                    </div>
+                </div>
+                <!-- Happy Hens -->
+                <div class="happy-hens">
+                    <img class="happy-hen" src="imgs/happy_hen.png" alt="happy-hen" />
+                    <img class="happy-hen" src="imgs/happy_hen.png" alt="happy-hen" />
+                </div>
+                <!-- Golden Eggs -->
+                <div class="golden-eggs">
+                    <div class="golden-nest">
+                         <img class="golden-egg" src="imgs/golden_egg.png" alt="golden" />
+                    </div>
+                    <div class="golden-nest">
+                         <img class="golden-egg" src="imgs/golden_egg.png" alt="golden" />
+                    </div>
+                </div>
+                <!-- Broken Golden Eggs -->
+                <div class="broken-Geggs">
+                    <img class="broken-Gegg" src="imgs/broken_Gegg.png" alt="broken golden egg" />
+                    <img class="broken-Gegg" src="imgs/broken_Gegg.png" alt="broken golden egg" />
+                </div>
+                <!-- Badket -->
+                <div class="basket">
+                    <img src="imgs/basket.svg" alt="basket" />
+                    <span class="score-counter"></span>
+                    <span class="gain-life">+ Life</span>
+                    <span class="lose-life">- Life</span>
+                </div>
+            </div>
+        </div>
+        <!-- Best Player -->
+        <div class="best-player">
+            <span class="best-score">Best Score : <span>0</span></span>
+            <span class="player">Recorded by : <span>Ahmed</span></span>
+        </div>
+        
+        <!-- Audio -->
+        <audio class="music" src="sounds/music.mp3" preload="auto" loop="true"></audio>
+
+        <!-- Main js file -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

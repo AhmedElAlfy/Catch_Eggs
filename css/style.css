@@ -1,0 +1,497 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    width: 360px;
+    height: 592px;
+    background-color: #42445A;
+}
+.start-game {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: #42445A;
+}
+.start-game .intro {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.start-game .intro img {
+    width: 300px;
+    height: 300px;
+}
+.start-game .start-btn,
+.start-game .bestPlayer-btn {
+    width: 200px;
+    margin: 40px auto 0;
+    border: 2px solid #3CA63C;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    color: #3CA63C;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.start-game .bestPlayer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background-color: #323342;
+    z-index: 999999999;
+    border: 5px dashed #3C9245;
+    border-radius: 20px;
+    top: -350px;
+    transition: top 1s;
+}
+.start-game .bestPlayer.active {
+    top: 50px !important;
+}
+.start-game .bestPlayer .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #3CA63C;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+} 
+.start-game .bestPlayer .stored-player {
+    margin-top: 50px;
+    text-align: center;
+} 
+.start-game .bestPlayer .stored-player h2 {
+    color: #3CA63C;
+    margin: 5px 0 20px;
+} 
+.start-game .bestPlayer .stored-player span {
+    display: block;
+    margin-top: 8px;
+    font-size: 25px;
+    color: #3CA63C;
+} 
+.play-again {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: #42445A;
+    display: none;
+}
+.play-again .result {
+    background-image: url('../imgs/hen-msg.png');
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 500px;
+    width: 400px;
+    margin: -80px 0 0 -25px;
+    position: relative;
+}
+.play-again .result .your-result {
+    display: block;
+    width: 115px;
+    position: absolute;
+    left: 140px;
+    top: 330px;
+    text-align: center;
+    color: #3CA63C;
+    font-size: 18px;
+    font-weight: bold;
+} 
+.play-again .result .your-result span {
+    font-size: 25px;
+    margin-top: 5px;
+    display: block;
+}
+.play-again .play-again-btn {
+    width: 200px;
+    margin: auto;
+    border: 2px solid #3CA63C;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    color: #3CA63C;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.game {
+    background-image: url('../imgs/background.jpg');
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 92%;
+    padding: 10px;
+    overflow: hidden;
+}
+.game .game-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 15px;
+    border: 2px solid #4C4D60;
+}
+.game .game-head span {
+    font-size: 16px;
+    color: #4C4D60;
+    font-weight: bold;
+}
+.game .game-body {
+    height: calc(100% - 47px);
+    width: 100%;
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+}
+.game .game-body .hens {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+}
+.game .game-body .hens .hen {
+    width: 100px;
+    height: 130px;
+    position: relative;
+    z-index: 1;
+    -webkit-animation: dancing 1s infinite linear;
+    animation: dancing 1s infinite linear;
+}
+.game .game-body .angery-hens {
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -80px;
+}
+.game .game-body .angery-hens .angery-hen {
+    width: 100px;
+    height: 130px;
+    position: relative;
+    z-index: 1;
+    -webkit-animation: dancing 1s infinite linear;
+    animation: dancing 1s infinite linear;
+    transition: margin 3s;
+}
+.game .game-body .angery-hens .angery-hen:first-child {
+    margin-left: -200px;
+}
+.game .game-body .angery-hens .angery-hen:last-child {
+    margin-right: -200px;
+}
+.game .game-body .angery-hens .angery-hen.show:first-child {
+    margin-left: 0px;
+}
+
+.game .game-body .angery-hens .angery-hen.show:last-child {
+    margin-right: 0px;
+}
+.game .game-body .happy-hens {
+    width: 100%;
+    padding: 0 75px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -45px;
+}
+.game .game-body .happy-hens .happy-hen {
+    width: 100px;
+    height: 130px;
+    position: relative;
+    z-index: 1;
+    -webkit-animation: dancing 1s infinite linear;
+    animation: dancing 1s infinite linear;
+    transition: margin 3s;
+}
+.game .game-body .happy-hens .happy-hen:first-child {
+    margin-left: -200px;
+}
+.game .game-body .happy-hens .happy-hen:last-child {
+    margin-right: -200px;
+}
+.game .game-body .happy-hens .happy-hen.show-now:first-child {
+    margin-left: 0px;
+}
+
+.game .game-body .happy-hens .happy-hen.show-now:last-child {
+    margin-right: 0px;
+}
+@-webkit-keyframes dancing {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+    }
+}
+@keyframes dancing {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+.game .game-body .eggs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 0 20px;
+    margin-top: -70px;
+}
+.game .game-body .eggs .nest {
+    Width: 50px;
+    height: 50px;
+    text-align: center;
+} 
+.game .game-body .eggs .nest:first-child {
+    padding-right: 30px;
+}
+.game .game-body .eggs .nest:nth-child(2) {
+    padding-right: 20px;
+}
+.game .game-body .eggs .nest:last-child {
+    padding-right: 10px;
+}
+.game .game-body .eggs .nest .egg {
+    width: 30px;
+    height: 33px;
+    position: absolute;
+    bottom: 82%;
+}
+.game .game-body .eggs .nest .egg.fall {
+    -webkit-animation: fall 5s ease-in-out;
+    animation: fall 5s ease-in-out;
+}
+.game .game-body .eggs .nest:nth-of-type(2) .egg.fall {
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+.game .game-body .eggs .nest:last-of-type .egg.fall {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+@-webkit-keyframes fall {
+    from {
+        bottom: 82%;
+    }
+    to {
+        bottom: 0px;
+    }
+}
+@keyframes fall {
+    from {
+        bottom: 82%;
+    }
+    to {
+        bottom: 0px;
+    }
+}
+.game .game-body .poos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 80px 0 70px;
+    margin-top: -70px;
+}
+.game .game-body .poos .poo-nest {
+    Width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-left: 20px;
+}
+.game .game-body .poos .poo-nest .poo {
+    width: 20px;
+    height: 33px;
+    position: absolute;
+    bottom: 75%;
+    display: none;
+}
+.game .game-body .poos .poo-nest .poo.fall-poo {
+    -webkit-animation: fall 5s ease-in-out forwards;
+    animation: fall-poo 5s ease-in-out forwards;
+    display: block;
+}
+@-webkit-keyframes fall-poo {
+    from {
+        bottom: 75%;
+    }
+    to {
+        bottom: 0px;
+    }
+}
+@keyframes fall-poo {
+    from {
+        bottom: 75%;
+    }
+    to {
+        bottom: 0px;
+    }
+}
+.game .game-body .golden-eggs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px 0 80px;
+    margin-top: -70px;
+}
+.game .game-body .golden-eggs .golden-nest {
+    Width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-left: 30px;
+}
+.game .game-body .golden-eggs .golden-nest .golden-egg {
+    width: 30px;
+    height: 33px;
+    position: absolute;
+    bottom: 0%;
+    display: none ;
+}
+.game .game-body .golden-eggs .golden-nest .golden-egg.fall-golden {
+    -webkit-animation: fallGolden 5s ease-in-out forwards;
+    animation: fallGolden 5s ease-in-out forwards;
+    display: block;
+}
+@-webkit-keyframes fallGolden {
+    from {
+        bottom: 60%;
+    }
+    to {
+        bottom: 0px;
+    }
+}
+@keyframes fallGolden {
+    from {
+        bottom: 60%;
+    }
+    to {
+        bottom: 0px;
+    }
+}
+.game .game-body .broken-eggs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 35px 0 25px;
+}
+.game .game-body .broken-eggs .broken-egg {
+    width: 40px;
+    height: 43px;
+    position: absolute;
+    bottom: 0px;
+    opacity: 0;
+}
+.game .game-body .broken-eggs .broken-egg:nth-child(2) {
+    left: 145px;
+}
+.game .game-body .broken-eggs .broken-egg:last-child {
+    left: 260px;
+}
+.game .game-body .broken-Geggs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 35px 0 25px;
+}
+.game .game-body .broken-Geggs .broken-Gegg {
+    width: 40px;
+    height: 43px;
+    position: absolute;
+    bottom: 0px;
+    opacity: 0;
+}
+.game .game-body .broken-Geggs .broken-Gegg:first-child {
+    left: 110px;
+}
+.game .game-body .broken-Geggs .broken-Gegg:last-child {
+    left: 210px;
+}
+.game .game-body .basket {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 50px;
+    cursor: pointer;
+    transition: left 0.3s;
+    z-index: 1;
+}
+.game .game-body .basket img {
+    width: 100%;
+    height: 100%;
+} 
+.game .game-body .basket .score-counter {
+    z-index: 1;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #84FF73;
+}
+.game .game-body .basket .gain-life {
+    position: absolute;
+    z-index: 2;
+    top: -30px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #3C9245;
+    background: linear-gradient(to top, #E1FF05, transparent);
+    opacity: 0;
+    transition: opacity 0.5s ea;
+} 
+.game .game-body .basket .lose-life {
+    position: absolute;
+    z-index: 2;
+    top: -30px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #5C7F4F;
+    background: linear-gradient(to top, #FF3F3F, transparent);
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+} 
+.best-player {
+    width: 100%;
+    height: 8%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.best-player span {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+}
